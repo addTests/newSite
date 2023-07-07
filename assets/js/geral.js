@@ -3,7 +3,7 @@
 function afiliar() {
     const afiliado = document.getElementById('afiliado').value;
 
-    window.location.href = "http://127.0.0.1:5500/index.html?" + afiliado;
+    window.location.href = "https://addtests.github.io/newSite?" + afiliado;
 
     console.log(linkNew)
     
