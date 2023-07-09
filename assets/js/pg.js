@@ -3,7 +3,7 @@
 //funçãos das cotas
 
 
-const valorDaQtd = 2.99;
+const valorDaQtd = 3.99;
 function addCotas(valor) {
 
     
@@ -44,42 +44,26 @@ function addCotas(valor) {
 function recuperarCotas () {
     let enviarCotas = document.querySelector('#campoEnvioCotas').value;
     const qtdCotasEnvio = document.querySelector('#campo-cotas').value;
-    const valorDasCotas = 2.99 * parseInt(qtdCotasEnvio);
+    const valorDasCotas = 3.99 * parseInt(qtdCotasEnvio);
 
     let cotas = parseInt(enviarCotas) + parseInt(qtdCotasEnvio);
 
-    console.log(cotas);
-
-    document.querySelector('#campoEnvioCotas').value = cotas;
+    cotas = document.querySelector('#campoEnvioCotas').value = qtdCotasEnvio;
 
     //recuperar afiliado
 
     let indicado = window.location.search;
     indicado = indicado.replace('?', '');
+    indicado = indicado.replace('%20', ' ');
 
     document.querySelector('#enviarAfiliado').value = indicado;
 
-    
-}
+    console.log(cotas);
 
-recuperarCotas()
+}
 
 
 const btnCotas = document.getElementById('btnPopup');
-
-//popup indicar
-
-const btnAbrir = document.getElementById('btnAbrir');
-const indicar = document.getElementById('popupIndicar');
-const btnFechar = document.getElementById('btnFechar');
-
-btnAbrir.onclick = function () {
-    indicar.showModal();
-}
-
-btnFechar.onclick = function () {
-    indicar.close();
-} 
 
 
 //fechar e abrir popup de compra
@@ -102,12 +86,12 @@ buttonClose.onclick = function () {
 //controle de telefone e cpf
 
 function ValidaCPF(){	
-    let cpfCampo = document.getElementsByClassName("cpfCampo").value; 
+    let cpfCampo = document.getElementById("cpfCampo").value; 
     let cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;	 
     if (cpfValido.test(cpfCampo) == true)	{ 
 
     } else	{	 
-        document.querySelector('.cpfCampo').value = '';
+        document.querySelector('#cpfCampo').value = '';
     }
 }
 function fMasc(objeto,mascara) {
@@ -172,7 +156,6 @@ function mascaraTelefone( campo ) {
 //validar a igualdade dos numeros
     mascaraTelefone( document.getElementById('telefone') );
     mascaraTelefone(document.getElementById('confTelefone'));
-    mascaraTelefone(document.getElementById('teleIndicar'));
 
 
 //carrossel 

@@ -59,58 +59,10 @@
                             Meus Números
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" id="btnAbrir">Indicar</a>
-                    </li>
-                    </ul>
+                </ul>
             </div>
 
         </nav>
-
-        <dialog id="popupIndicar">
-            <div class="container" id="indicar-pop">
-                <div class="popup-tittle">
-                    <h4>
-                        Indicar
-                    </h4>
-                    <span id="btnFechar">
-                        <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
-                    </span>
-                </div>
-                <div class="container-fluid d-flex">
-                    <form action="">
-                        <fieldset>
-                            <div id="formIndicar">
-                                <div>
-                                    <label for="nome">Nome</label>
-                                    <input type="text" id="afiliado"  name="nome" required>
-                                </div>
-                                <div>
-                                    <label for="cpf">CPF</label>
-                                    <input type="text"class="cpfCampo" maxlength="14" required placeholder="###.###.###-##"  onkeydown="javascript: fMasc( this, mCPF);">
-                                </div>
-                                <div>
-                                    <label for="telefone">Telefone</label>
-                                    <input type="tel" name="telefone" id="teleIndicar" max="14" min="9"   placeholder="(xx) xxxxx-xxxx" required>
-                                </div>
-                                <div class="ajuste-form">
-                                    <input type="checkbox" required>
-                                    <p>
-                                        Ao clicar em finalizar, você está de acordo com os <a href="assets/TERMOS.pdf">termos</a> do sorteio.
-                                    </p>
-                                </div>
-                                <div>
-                                    <button onclick="ValidaCPF(); afiliar()" type="submit" class="mt-2 btn btn-success">Indicar</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                        
-                    </form>
-
-                </div>
-    
-            </div>
-        </dialog>
 
     </header>
 
@@ -144,7 +96,7 @@
                 Meus numeros
             </a>
          </div>
-         <!--
+
          <div class="sorte-promo ajuste-sorte">
             <h4>
                 Promoção
@@ -168,7 +120,6 @@
                 </button>
             </div>
          </div>
-        -->
          <div class="sorte-promo sorte-ajuste container">
             <h4>
                 Cotas
@@ -179,7 +130,7 @@
 
             <div class="ajuste-layout sorte-ajuste cotas-ajustes" id="multiplicadorDeCotas">
                 <span>
-                    <span id="qtdDasCotas">1</span> x R$ 2,99 = <strong>R$ </strong><strong id="valorDasCotas">2,99</strong>
+                    <span id="qtdDasCotas">1</span> x R$ 3,99 = <strong>R$ </strong><strong id="valorDasCotas">3,99</strong>
                 </span>
                 <div id="selecionar-cotas">
                     <button onclick="addCotas(5)">
@@ -243,7 +194,7 @@
                                 </div>
 
                                 <div class="d-none">
-                                    <input type="text" name="afiliado" value="" id="enviarAfiliado">
+                                    <input type="text" name="afiliado" value="0" id="enviarAfiliado" onblur="addCotas()">
 
                                 </div>
                                 <div>
@@ -264,7 +215,7 @@
                                 </div>
                                 <div>
                                     <label for="cpf">Seu CPF</label>
-                                    <input type="text" name="cpf" class="cpfCampo" maxlength="14" required placeholder="###.###.###-##"  onkeydown="javascript: fMasc( this, mCPF);">
+                                    <input type="text" name="cpf" id="cpfCampo" maxlength="14" required placeholder="###.###.###-##"  onkeydown="javascript: fMasc( this, mCPF);">
                                 </div>
                                 <div class="ajuste-form">
                                     <input type="checkbox" required>

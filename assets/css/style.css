@@ -49,64 +49,6 @@ a.nav-link {
     font-size: bold; 
 }
 
-/*
-popup indicar
-*/
-
-#popupIndicar {
-    width: 90vw;
-    height: 65vh;
-    padding: 1rem;
-    flex-direction: column;
-    background: #202020;
-    color: #fff;
-    border-radius: .5rem;
-}
-
-
-#formIndicar {
-    display: flex;
-    flex-direction: column;
-}
-
-#formIndicar > div {
-    display: flex;
-    flex-direction: column;
-    padding: .25rem 0;
-    margin-top: .5rem;
-}
-
-#formIndicar > div > input {
-    height: 2.25rem;
-    color: #fff;
-    background-color: #343434;
-    border: 1px solid #4d4d4d;
-    border-radius: .5rem;
-    text-indent: .5rem;
-}
-
-#formIndicar > div.ajuste-form {
-    flex-direction: row;
-    gap: .5rem;
-    
-}
-
-#formIndicar > div.ajuste-form > input {
-    margin-right: .5rem;
-    width: 25px;
-}
-
-#formIndicar > div.ajuste-form > p {
-    margin-bottom: 0;
-    font-size: .8rem;
-}
-
-dialog {
-    padding: 0;
-    border-radius: .5rem;
-    background: #000;
-    border: 0;
-}
 
 
 /*
