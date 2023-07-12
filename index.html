@@ -106,17 +106,11 @@
             </p>
 
             <div class="ajuste-layout sorte-ajuste">
-                <button>
-                    10 cotas - R$3,90
+                <button onclick="addCotas(10); descontoValor()">
+                    A partir de 10 cotas cada - R$ 2,99
                 </button>
-                <button>
-                    50 cotas - R$19,50
-                </button>
-                <button>
-                    100 cotas - R$39,00
-                </button>
-                <button>
-                    200 cotas - R$78,00
+                <button onclick="addCotas(50); descontoValor()">
+                   A partir de 50 cotas cada - R$ 1,99
                 </button>
             </div>
          </div>
@@ -130,31 +124,31 @@
 
             <div class="ajuste-layout sorte-ajuste cotas-ajustes" id="multiplicadorDeCotas">
                 <span>
-                    <span id="qtdDasCotas">1</span> x R$ 3,99 = <strong>R$ </strong><strong id="valorDasCotas">3,99</strong>
+                    <span id="qtdDasCotas">1</span> x R$ <span id="atualizaValor"> 3,99 </span> = <strong>R$ </strong><strong id="valorDasCotas">3,99</strong>
                 </span>
                 <div id="selecionar-cotas">
-                    <button onclick="addCotas(5)">
+                    <button onclick="addCotas(5); descontoValor()">
                         +05
                     </button>
-                    <button onclick="addCotas(10)">
+                    <button onclick="addCotas(10); descontoValor()">
                         +10
                     </button>
-                    <button onclick="addCotas(25)">
+                    <button onclick="addCotas(25); descontoValor()">
                         +25
                     </button>
-                    <button onclick="addCotas(50)">
+                    <button onclick="addCotas(50); descontoValor()">
                         +50
                     </button>
                 </div>
 
                 <div id="somar-cotas">
-                    <button class="operador-cotas" id="operador-menos" onclick="addCotas('-')">
+                    <button class="operador-cotas" id="operador-menos" onclick="addCotas('-'); descontoValor()">
                         -
                     </button>
-                    <input onblur="addCotas()" value="1" type="number" id="campo-cotas" >
+                    <input onblur="addCotas(); descontoValor()" value="1" type="number" id="campo-cotas" >
 
                     </input>
-                    <button class="operador-cotas" id="operador-mais" onclick="addCotas(1)">
+                    <button class="operador-cotas" id="operador-mais" onclick="addCotas(1); descontoValor()">
                         +
                     </button>
                 </div>
@@ -265,6 +259,16 @@
                 <div class="d-flex mb-5 col-sm-5 col-lg-3">
                     <div class="me-3"><span class="r-numeral-participar">3</span></div>
                     <div>
+                        <h5 class="r-titulo-participar">Revise seus Dados</h5>
+                        <p class="r-paragrafo-participar">
+                            É de suma importância que todos os dados sejam preechidos corretamente, pois estes, serão utilizados como meio comprobatório para o detentor da cota sorteada poder retirar o seu prêmio. o preenchimento incorreto poderá acarretar na percaa da premiação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex mb-5 col-sm-5 col-lg-3">
+                    <div class="me-3"><span class="r-numeral-participar">4</span></div>
+                    <div>
                         <h5 class="r-titulo-participar">Efetue o Pagamento</h5>
                         <p class="r-paragrafo-participar">
                             Realize o pagamento utilizando o PIX. É seguro e, em poucos minutos, você receberá seu eBook e as cotas em seu e-mail.
@@ -318,7 +322,7 @@
         </ul>
         <div class="container-fluid">
             <p>
-                &copy; 2023 - Todos os sorteios do Rifas são regulamentados e fiscalizados pela LOTEP - sob o número de autorização LTP-PRC 2023/00328
+                &copy; 2023 - Todos os Direitos Reservados SK PRÊMIOS
             </p>
         </div>
     </footer>

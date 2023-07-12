@@ -3,11 +3,14 @@
 //funçãos das cotas
 
 
-const valorDaQtd = 3.99;
+let valorDaQtd = 3.99;
+let valorDoCampo = document.getElementById('campo-cotas').value;
+
+
 function addCotas(valor) {
 
     
-    let valorDoCampo = document.getElementById('campo-cotas').value;
+    valorDoCampo = document.getElementById('campo-cotas').value;
     
 
     if(valor === '-' && valorDoCampo > 1) {
@@ -18,25 +21,7 @@ function addCotas(valor) {
         let b = parseInt(valorDoCampo);
 
         document.getElementById('campo-cotas').value = a + b;
-    }   /*else if (valor < 0 ) {
-        document.querySelector('#campo-cotas').value = 1;
-    }*/
-
-//multiplicador das cotas pelo valor
-
-    const cotaQtd = document.querySelector('#campo-cotas');
-
-    const value = cotaQtd.value;
-
-    let valorT = value * valorDaQtd;
-
-    //console.log(valorT);
-
-    let cotasTotal = document.querySelector('#qtdDasCotas');
-    cotasTotal.innerHTML = value;
-
-    let multiplicarValor = document.querySelector('#valorDasCotas');
-    multiplicarValor.innerHTML = valorT.toFixed(2);
+    };
 
 }
 
@@ -44,7 +29,6 @@ function addCotas(valor) {
 function recuperarCotas () {
     let enviarCotas = document.querySelector('#campoEnvioCotas').value;
     const qtdCotasEnvio = document.querySelector('#campo-cotas').value;
-    const valorDasCotas = 3.99 * parseInt(qtdCotasEnvio);
 
     let cotas = parseInt(enviarCotas) + parseInt(qtdCotasEnvio);
 
@@ -60,8 +44,40 @@ function recuperarCotas () {
 
     console.log(cotas);
 
-}
+};
 
+function descontoValor() {
+
+    const cotaQtd = document.querySelector('#campo-cotas');
+    let atualizarValorDaCota = document.querySelector('#atualizaValor');
+    let novasCotas = 0;
+
+    novasCotas += parseInt(cotaQtd.value);
+
+
+    if(novasCotas >= 10 && novasCotas < 50) {
+        atualizarValorDaCota.innerHTML = '2,99';
+        valorDaQtd = 2.99; 
+    } else if (novasCotas < 10) {
+        atualizarValorDaCota.innerHTML = '3,99';
+        valorDaQtd = 3.99;
+    } else if (novasCotas > 49) {
+        atualizarValorDaCota.innerHTML = '1,99';
+        valorDaQtd = 1.99;
+    }
+
+    //multiplicador das cotas pelo valor
+    
+    const value = cotaQtd.value;
+
+    let valorT = value * valorDaQtd;
+
+    let cotasTotal = document.querySelector('#qtdDasCotas');
+    cotasTotal.innerHTML = value;
+
+    let multiplicarValor = document.querySelector('#valorDasCotas');
+    multiplicarValor.innerHTML = valorT.toFixed(2);
+}
 
 const btnCotas = document.getElementById('btnPopup');
 
